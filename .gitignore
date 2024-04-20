@@ -1,0 +1,6 @@
+log/
+rabbitmq_server-*/
+venv/
+
+*.xz
+rabbitmq.conf

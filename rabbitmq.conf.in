@@ -1,0 +1,36 @@
+loopback_users = none
+
+classic_queue.default_version = 2
+
+auth_mechanisms.1 = PLAIN
+auth_mechanisms.2 = AMQPLAIN
+auth_mechanisms.3 = EXTERNAL
+
+log.console = true
+log.console.level = debug
+log.file.level = debug
+
+listeners.tcp.default = 5672
+listeners.ssl.default = 5671
+
+management.tcp.port = 15672
+management.ssl.port = 15671
+
+management.ssl.cacertfile = ##CERTS_DIR##/ca_certificate.pem
+management.ssl.certfile   = ##CERTS_DIR##/server_##SERVER_CN##_certificate.pem
+management.ssl.keyfile    = ##CERTS_DIR##/server_##SERVER_CN##_key.pem
+
+ssl_options.cacertfile = ##CERTS_DIR##/ca_certificate.pem
+ssl_options.certfile   = ##CERTS_DIR##/server_##SERVER_CN##_certificate.pem
+ssl_options.keyfile    = ##CERTS_DIR##/server_##SERVER_CN##_key.pem
+ssl_options.verify     = verify_none
+ssl_options.fail_if_no_peer_cert = false
+ssl_options.depth      = 8
+# ssl_cert_login_from    = common_name
+
+mqtt.listeners.tcp.default = 1883
+mqtt.listeners.ssl.default = 8883
+mqtt.allow_anonymous  = true
+mqtt.ssl_cert_login   = true
+# mqtt.vhost            = /
+# mqtt.exchange         = test_exchange
